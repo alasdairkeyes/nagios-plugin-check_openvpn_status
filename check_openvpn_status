@@ -146,7 +146,7 @@ sub parse_output {
         ## Parse the date in the file
     my $date_line = shift(@$contents);
     my $updated;
-    if ($date_line =~ /^Updated,(\w{3})\s(\w{3})\s(\d{2})\s(\d{2}):(\d{2}):(\d{2})\s(\d{4})$/) {
+    if ($date_line =~ /^Updated,(\w{3})\s(\w{3})\s+(\d{1,2})\s(\d{2}):(\d{2}):(\d{2})\s(\d{4})$/) {
         $updated = DateTime->new(
             time_zone   => 'local',
             year        => $7,
